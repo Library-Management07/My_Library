@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/HomeScreen.dart';
 import 'dart:ui';
 
 void main() {
-  runApp(MaterialApp(
+  runApp ( MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-      routes: <String, WidgetBuilder>{
-        // "/Home": (BuildContext context) => new Home()
-      }));
+      home:Home_screen(),
+      ),
+  );
 }
 
 class LoginPage extends StatelessWidget {
