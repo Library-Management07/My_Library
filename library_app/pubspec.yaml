@@ -48,8 +48,6 @@ flutter:
   assets:
    - assets/Menu_Home.png
    - assets/One.png
-   - assets/one1.png
-   - assets/Theme1.png
    - assets/ce.png
    - assets/it.png
    - assets/sem.png
