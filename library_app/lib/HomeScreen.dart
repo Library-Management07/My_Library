@@ -133,7 +133,7 @@ class _Home_screenState extends State<Home_screen> {
                         width: 180.0,
                         child: InkWell(
                           onTap: (){
-                            //    Navigator.push(context,MaterialPageRoute(builder: (context)=>App()));
+                            //    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyAcc()));
                           },
                           child: Container(
                             child: Text("My account",style: TextStyle(fontWeight: FontWeight.bold,),),

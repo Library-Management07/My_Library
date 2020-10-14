@@ -1,16 +1,161 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/HomeScreen.dart';
+import 'package:library_app/Bookstore/BookStore.dart';
 import 'dart:ui';
 
 void main() {
   runApp ( MaterialApp(
+    initialRoute: '/home',
+    routes:<String, WidgetBuilder> {
+      //'/':(context) =>Loading(),
+      '/home': (context) =>Home_screen(),
+      '/bookstore':(context)=>App(),
+      },
       debugShowCheckedModeBanner: false,
-      home:Home_screen(),
       ),
   );
 }
+/*void main(){
+  runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Signup(),
+    ),
+  );
+}
+class Signup extends StatefulWidget {
+  @override
+  _SignupState createState() => _SignupState();
+}
 
-class LoginPage extends StatelessWidget {
+class _SignupState extends State<Signup> {
+  nested() {
+    return NestedScrollView(
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+        return <Widget>[
+          SliverAppBar(
+            leading: IconButton(
+                icon: Icon(Icons.arrow_back_ios),
+                onPressed: () {
+                  //    Navigator.push(context,MaterialPageRoute(builder: (context)=>Home_screen()));
+                }
+            ),
+            expandedHeight: 200.0,
+            floating: false,
+            backgroundColor: Colors.lightGreen,
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              title: Text("Sign up"),
+              background: Image.asset(
+                "assets/Menu_Home.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ];
+      },
+      body:ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+                children: [
+                  IconButton(
+                        icon: Icon(Icons.person), onPressed: null
+                  ),
+                  Expanded(
+                      child: Container(
+                        margin: EdgeInsets.only(right: 20,left: 10),
+                        child: TextField(
+                          decoration: InputDecoration(hintText: 'Username'),
+                        ),
+                      ),
+                  ),
+                ],
+              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                IconButton(
+                    icon: Icon(Icons.account_box), onPressed: null
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(right: 20,left: 10),
+                    child: TextField(
+                      decoration: InputDecoration(hintText: 'ID no'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                IconButton(
+                    icon: Icon(Icons.email_outlined), onPressed: null
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(right: 20,left: 10),
+                    child: TextField(
+                      decoration: InputDecoration(hintText: 'Email'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                IconButton(
+                    icon: Icon(Icons.lock_open), onPressed: null
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(right: 20,left: 10),
+                    child: TextField(
+                      decoration: InputDecoration(hintText: 'Password'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding:EdgeInsets.all(15.0),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(7.0),
+                  child: Container(
+                  height: 50,
+                    child: RaisedButton(
+                      onPressed: (){},
+                      color: Colors.lightGreen,
+                      child: Text("Sign in"),
+                    ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: nested(),
+    );
+  }
+}*/
+
+/*class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -216,3 +361,4 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
+*/
