@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:library_app/Bookstore/CE.dart';
 
 class Home_screen extends StatefulWidget {
   @override
   _Home_screenState createState() => _Home_screenState();
 }
 
+// ignore: camel_case_types
 class _Home_screenState extends State<Home_screen> {
   @override
   Widget build(BuildContext context) {
@@ -49,8 +51,8 @@ class _Home_screenState extends State<Home_screen> {
                       width: 180.0,
                       child: InkWell(
                         onTap: () {
-                          // Navigator.push(context,
-                          //   MaterialPageRoute(builder: (context) => ()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Ce()));
                         },
                         child: Container(
                           child: Text(
