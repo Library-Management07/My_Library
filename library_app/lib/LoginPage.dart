@@ -1,8 +1,16 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'SignUp.dart';
 
 class LoginPage extends StatelessWidget {
+  final _auth = FirebaseAuth.instance;
+  final db = FirebaseDatabase.instance.reference();
+  String email, password,name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +27,6 @@ class LoginPage extends StatelessWidget {
               Color(0xFF398AE5),
               Colors.blue[700],
               Colors.blue[800],
-              Colors.blue[900],
             ],
           ),
         ),
@@ -49,10 +56,10 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5.0),
+            SizedBox(height: 10.0),
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(left: 25.0,right: 25.0,bottom:150),
+                margin: EdgeInsets.only(left: 25.0,right: 25.0,bottom:180),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -94,6 +101,10 @@ class LoginPage extends StatelessWidget {
                                 ),
                               ),
                               child: TextField(
+                                keyboardType: TextInputType.emailAddress,
+                                onChanged: (value) {
+                                  email=value;
+                                },
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                       Icons.email,
@@ -117,6 +128,9 @@ class LoginPage extends StatelessWidget {
                               ),
                               child: TextField(
                                 obscureText: true,
+                                onChanged: (value) {
+                                  password=value;
+                                },
                                 decoration: InputDecoration(
                                   prefixIcon: Icon(
                                       Icons.lock,
@@ -133,18 +147,14 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       FlatButton(
                         child: new Text(
                           "Forget password?",
                             style: TextStyle(color: Colors.grey),
                         ),
-                        onPressed: (){},
-                      ),
-                      SizedBox(
-                        height: 1.0,
-                      ),
+                        onPressed: () {}),
                       RaisedButton(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
                         elevation: 5.0,
@@ -157,29 +167,67 @@ class LoginPage extends StatelessWidget {
                         ),
                        padding: EdgeInsets.only(left: 93.0,right: 93.0,bottom: 12.0,top: 12.0),
                         color: Colors.blueAccent,
-                        onPressed: (){},
+                        onPressed: (){_auth.signInWithEmailAndPassword(email: email.trim(), password: password.trim())
+                              .then((firebaseUser) {
+                                Navigator.push(
+                                context,
+                                new MaterialPageRoute(
+                                    builder: (__) => new SignUp()));
+                          }).catchError((e) {
+                            print(e);
+                          },
+                          );
+                        },
                         ),
                       SizedBox(
-                        height: 15,
+                        height: 5,
                       ),
                       Text(
                         "-OR-",
                         style: TextStyle(color: Colors.grey),
                       ),
+                      RaisedButton(
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                        elevation: 5.0,
+                        child: new Text("SIGNUP",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              letterSpacing: 1.5
+                          ),
+                        ),
+                        padding: EdgeInsets.only(left: 93.0,right: 93.0,bottom: 12.0,top: 12.0),
+                        color: Colors.blueAccent,
+                        onPressed: (){
+                          Navigator.push(
+                              context,
+                              new MaterialPageRoute(
+                                  builder: (__) => new SignUp()));
+                        },
+                      ),
                       SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
 
-                      SignInButton(
+                      /*SignInButton(
                           buttonType: ButtonType.google,
                           btnColor: Colors.white60,
                           onPressed: () {}
-                          ),
+                          ),*/
                     ],
                   ),
                 ),
               ),
             ),
+            /*Padding(
+                padding: EdgeInsets.all(30),
+              child: Center(
+                child: new Text(
+                  "Doesn't have Account? REGISTER",
+                  style: TextStyle(color: Colors.black),
+                ),
+              )
+            )*/
 
           ],
         ),
