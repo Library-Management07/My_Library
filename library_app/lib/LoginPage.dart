@@ -1,16 +1,15 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:sign_button/constants.dart';
-import 'package:sign_button/create_button.dart';
+import 'package:library_app/HomeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'HomeScreen.dart';
 import 'SignUp.dart';
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   final _auth = FirebaseAuth.instance;
   final db = FirebaseDatabase.instance.reference();
-  String email, password,name;
+  String email, password, name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +58,7 @@ class LoginPage extends StatelessWidget {
             SizedBox(height: 10.0),
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(left: 25.0,right: 25.0,bottom:180),
+                margin: EdgeInsets.only(left: 25.0, right: 25.0, bottom: 180),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -83,7 +82,7 @@ class LoginPage extends StatelessWidget {
                           boxShadow: [
                             BoxShadow(
                               color: Colors.blue,
-                             // color: Color.fromRGBO(255, 95, 27, .3),
+                              // color: Color.fromRGBO(255, 95, 27, .3),
                               blurRadius: 20.0,
                               offset: Offset(0, 10),
                             ),
@@ -92,7 +91,8 @@ class LoginPage extends StatelessWidget {
                         child: Column(
                           children: <Widget>[
                             Container(
-                              padding: EdgeInsets.only(right: 10.0,top: 10.0,bottom: 10.0),
+                              padding: EdgeInsets.only(
+                                  right: 10.0, top: 10.0, bottom: 10.0),
                               decoration: BoxDecoration(
                                 border: Border(
                                   bottom: BorderSide(
@@ -103,12 +103,10 @@ class LoginPage extends StatelessWidget {
                               child: TextField(
                                 keyboardType: TextInputType.emailAddress,
                                 onChanged: (value) {
-                                  email=value;
+                                  email = value;
                                 },
                                 decoration: InputDecoration(
-                                  prefixIcon: Icon(
-                                      Icons.email,
-                                  size: 23),
+                                  prefixIcon: Icon(Icons.email, size: 23),
                                   hintText: "Email or phone number",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
@@ -118,7 +116,8 @@ class LoginPage extends StatelessWidget {
                               ),
                             ),
                             Container(
-                              padding: EdgeInsets.only(right: 10.0,top: 10.0,bottom: 10.0),
+                              padding: EdgeInsets.only(
+                                  right: 10.0, top: 10.0, bottom: 10.0),
                               decoration: BoxDecoration(
                                 border: Border(
                                   bottom: BorderSide(
@@ -129,12 +128,10 @@ class LoginPage extends StatelessWidget {
                               child: TextField(
                                 obscureText: true,
                                 onChanged: (value) {
-                                  password=value;
+                                  password = value;
                                 },
                                 decoration: InputDecoration(
-                                  prefixIcon: Icon(
-                                      Icons.lock,
-                                      size: 21),
+                                  prefixIcon: Icon(Icons.lock, size: 21),
                                   hintText: "Password",
                                   hintStyle: TextStyle(
                                     color: Colors.grey,
@@ -150,35 +147,42 @@ class LoginPage extends StatelessWidget {
                         height: 5,
                       ),
                       FlatButton(
-                        child: new Text(
-                          "Forget password?",
+                          child: new Text(
+                            "Forget password?",
                             style: TextStyle(color: Colors.grey),
-                        ),
-                        onPressed: () {}),
+                          ),
+                          onPressed: () {}),
                       RaisedButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0)),
                         elevation: 5.0,
-                        child: new Text("LOGIN",
-                            style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                              letterSpacing: 1.5
-                            ),
+                        child: new Text(
+                          "LOGIN",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              letterSpacing: 1.5),
                         ),
-                       padding: EdgeInsets.only(left: 93.0,right: 93.0,bottom: 12.0,top: 12.0),
+                        padding: EdgeInsets.only(
+                            left: 93.0, right: 93.0, bottom: 12.0, top: 12.0),
                         color: Colors.blueAccent,
-                        onPressed: (){_auth.signInWithEmailAndPassword(email: email.trim(), password: password.trim())
+                        onPressed: () {
+                          _auth
+                              .signInWithEmailAndPassword(
+                                  email: email.trim(),
+                                  password: password.trim())
                               .then((firebaseUser) {
-                                Navigator.push(
+                            Navigator.push(
                                 context,
                                 new MaterialPageRoute(
-                                    builder: (__) => new SignUp()));
-                          }).catchError((e) {
-                            print(e);
-                          },
+                                    builder: (__) => new Home_screen()));
+                          }).catchError(
+                            (e) {
+                              print(e);
+                            },
                           );
                         },
-                        ),
+                      ),
                       SizedBox(
                         height: 5,
                       ),
@@ -187,18 +191,20 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(color: Colors.grey),
                       ),
                       RaisedButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0)),
                         elevation: 5.0,
-                        child: new Text("SIGNUP",
+                        child: new Text(
+                          "SIGNUP",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
-                              letterSpacing: 1.5
-                          ),
+                              letterSpacing: 1.5),
                         ),
-                        padding: EdgeInsets.only(left: 93.0,right: 93.0,bottom: 12.0,top: 12.0),
+                        padding: EdgeInsets.only(
+                            left: 93.0, right: 93.0, bottom: 12.0, top: 12.0),
                         color: Colors.blueAccent,
-                        onPressed: (){
+                        onPressed: () {
                           Navigator.push(
                               context,
                               new MaterialPageRoute(
@@ -228,7 +234,6 @@ class LoginPage extends StatelessWidget {
                 ),
               )
             )*/
-
           ],
         ),
       ),

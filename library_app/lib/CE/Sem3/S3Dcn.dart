@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem3/Csem3.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Bookstore/CE.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 
 class sem3 extends StatelessWidget {
   @override
@@ -22,17 +18,17 @@ class S3Dcn extends StatefulWidget {
 }
 
 class _S3DcnState extends State<S3Dcn> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Csem3()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Csem3()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -54,19 +50,20 @@ class _S3DcnState extends State<S3Dcn> {
           ListView.builder(
             shrinkWrap: true,
             itemCount: _Books.length,
-            itemBuilder: (context,index){
-              final books=_Books[index];
+            itemBuilder: (context, index) {
+              final books = _Books[index];
               return ExpansionTile(
                 title: ListTile(
-                  title: Text(books.bookname,style:
-                  TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                  title: Text(
+                    books.bookname,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 children: [
                   ListTile(
-                    title: Text("Available: "+ books.avail),
+                    title: Text("Available: " + books.avail),
                   ),
                 ],
               );
@@ -76,6 +73,7 @@ class _S3DcnState extends State<S3Dcn> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,11 +81,13 @@ class _S3DcnState extends State<S3Dcn> {
     );
   }
 }
+
 class Books {
-  Books({this.bookname,this.avail});
+  Books({this.bookname, this.avail});
   String bookname;
   String avail;
 }
+
 final List<Books> _Books = <Books>[
   Books(
     bookname: "Data Communication and networking",

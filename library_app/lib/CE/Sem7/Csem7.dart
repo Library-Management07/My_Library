@@ -7,9 +7,6 @@ import 'package:library_app/CE/Sem7/S7ml.dart';
 import 'package:library_app/CE/Sem7/S7wm.dart';
 import 'package:library_app/CE/Sem7/S7Iot.dart';
 import 'package:library_app/CE/Sem7/S7bt.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 
 class sem7 extends StatelessWidget {
   @override
@@ -27,17 +24,17 @@ class Csem7 extends StatefulWidget {
 }
 
 class _Csem7State extends State<Csem7> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ce()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Ce()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -53,24 +50,31 @@ class _Csem7State extends State<Csem7> {
           ),
         ];
       },
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){
-                           Navigator.push(context,MaterialPageRoute(builder: (context)=>S7bd()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7bd()));
                   },
                   child: Container(
-                    child: Center(child: Text("Big Data Analysis",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Big Data Analysis",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -83,15 +87,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                       onTap: (){ Navigator.push(context,MaterialPageRoute(builder: (context)=>S7dp()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7dp()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Design of Language Processor",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Design of Language Processor",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -104,15 +117,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){  Navigator.push(context,MaterialPageRoute(builder: (context)=>S7cc()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7cc()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Cloud Computing",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Cloud Computing",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -125,15 +147,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S7Iot()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7Iot()));
+                  },
                   child: Container(
-                    child:  Center(child: Text("Internet of things",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Internet of things",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -146,15 +177,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S7bt()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7bt()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Blockchain technology",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Blockchain technology",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -167,15 +207,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S7wm()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7wm()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Wireless Communication and mobile computing",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Wireless Communication and mobile computing",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -188,15 +237,24 @@ class _Csem7State extends State<Csem7> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S7ml()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S7ml()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Machine Learning",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Machine Learning",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -210,6 +268,7 @@ class _Csem7State extends State<Csem7> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -5,9 +5,6 @@ import 'package:library_app/CE/Sem4/S4Dms.dart';
 import 'package:library_app/CE/Sem4/S4Hs.dart';
 import 'package:library_app/CE/Sem4/S4Py.dart';
 import 'package:library_app/CE/Sem4/S4Mco.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 
 class sem4 extends StatelessWidget {
   @override
@@ -25,17 +22,17 @@ class Csem4 extends StatefulWidget {
 }
 
 class _Csem4State extends State<Csem4> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ce()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Ce()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -58,17 +55,24 @@ class _Csem4State extends State<Csem4> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>S4Da()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S4Da()));
                   },
                   child: Container(
-                    child: Center(child: Text("Data Structure and Algorithms",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Data Structure and Algorithms",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -81,15 +85,24 @@ class _Csem4State extends State<Csem4> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){ Navigator.push(context,MaterialPageRoute(builder: (context)=>S4Dms()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S4Dms()));
+                  },
                   child: Container(
-                    child: Center(child: Text("DataBase Management System",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "DataBase Management System",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -102,15 +115,24 @@ class _Csem4State extends State<Csem4> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){  Navigator.push(context,MaterialPageRoute(builder: (context)=>S4Mco()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S4Mco()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Microprocessor and Computer Organization",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Microprocessor and Computer Organization",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -123,15 +145,24 @@ class _Csem4State extends State<Csem4> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S4Py()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S4Py()));
+                  },
                   child: Container(
-                    child:  Center(child: Text("Programming in Python",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Programming in Python",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -144,15 +175,24 @@ class _Csem4State extends State<Csem4> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S4Hs()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S4Hs()));
+                  },
                   child: Container(
-                    child: Center(child: Text("HS",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "HS",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -166,6 +206,7 @@ class _Csem4State extends State<Csem4> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -2,7 +2,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:library_app/LoginPage.dart';
+import 'package:library_app/HomeScreen.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -167,8 +167,38 @@ class _SignUpState extends State<SignUp> {
                                   email: email, password: password);
                           User user = result.user;
                           try {
-                            /*await user.sendEmailVerification();
-                          return user.uid;*/
+                            dynamic str = await _auth
+                                .createUserWithEmailAndPassword(
+                              email: email.trim(),
+                              password: password.trim(),
+                            )
+                                .then(
+                              (signedInUser) {
+                                _firestore.collection('users').add({
+                                  'email': email,
+                                  'pass': password
+                                }).then((value) {
+                                  if (signedInUser != null) {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (__) =>
+                                                new Home_screen()));
+                                  }
+                                }).catchError((e) {
+                                  print(e);
+                                }).catchError((e) {
+                                  print(e);
+                                });
+                              },
+                            );
+                            if (str != null) {
+                              FirebaseDatabase.instance
+                                  .reference()
+                                  .child('users')
+                                  .child(email)
+                                  .set({'username': name, 'Id no.': '19ce100'});
+                            }
                           } catch (e) {
                             print(
                                 "An error occured while trying to send email verification");
@@ -189,32 +219,3 @@ class _SignUpState extends State<SignUp> {
     );
   }
 }
-
-/*
-                    dynamic str = await _auth.createUserWithEmailAndPassword(
-                      email: email.trim(), password: password.trim(),)
-                        .then((signedInUser) {
-                      _firestore.collection('users')
-                          .add({'email': email, 'pass': password})
-                          .then((value) {
-                        if (signedInUser != null) {
-                          Navigator.push(context,
-                              MaterialPageRoute(
-                                  builder: (__) => new LoginPage()));
-                        }
-                      }).catchError((e) {
-                        print(e);
-                      }).catchError((e) {
-                        print(e);
-                      });
-                    },);
-                    if (str != null) {
-                      FirebaseDatabase.instance.reference()
-                          .child('users')
-                          .child(email)
-                          .set({
-                        'username': name,
-                        'Id no.': '19ce100'
-                      });
-                    }
-                  */

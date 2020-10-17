@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
 
 class ITDepart extends StatelessWidget {
   @override
@@ -27,8 +26,8 @@ class _ItState extends State<It> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => App()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home_screen()));
                 }),
             expandedHeight: 200.0,
             floating: false,

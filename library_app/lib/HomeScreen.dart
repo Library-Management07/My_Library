@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
 
 class Home_screen extends StatefulWidget {
   @override
@@ -14,13 +13,6 @@ class _Home_screenState extends State<Home_screen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          /*decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.blueGrey, Colors.white70],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-            ),*/
           child: Column(
             children: [
               Container(
@@ -57,8 +49,8 @@ class _Home_screenState extends State<Home_screen> {
                       width: 180.0,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => App()));
+                          // Navigator.push(context,
+                          //   MaterialPageRoute(builder: (context) => ()));
                         },
                         child: Container(
                           child: Text(

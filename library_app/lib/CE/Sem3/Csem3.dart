@@ -5,9 +5,6 @@ import 'package:library_app/CE/Sem3/S3Java.dart';
 import 'package:library_app/CE/Sem3/S3Dcn.dart';
 import 'package:library_app/CE/Sem3/S3Hs.dart';
 import 'package:library_app/CE/Sem3/S3De.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 
 class sem3 extends StatelessWidget {
   @override
@@ -25,17 +22,17 @@ class Csem3 extends StatefulWidget {
 }
 
 class _Csem3State extends State<Csem3> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ce()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Ce()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -58,17 +55,24 @@ class _Csem3State extends State<Csem3> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=>S3Maths()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S3Maths()));
                   },
                   child: Container(
-                    child: Center(child: Text("Maths",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Maths",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -81,15 +85,24 @@ class _Csem3State extends State<Csem3> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){ Navigator.push(context,MaterialPageRoute(builder: (context)=>S3Java()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S3Java()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Java",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Java",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -102,15 +115,24 @@ class _Csem3State extends State<Csem3> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){  Navigator.push(context,MaterialPageRoute(builder: (context)=>S3Dcn()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S3Dcn()));
+                  },
                   child: Container(
-                    child: Center(child: Text("DCN",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "DCN",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -123,15 +145,24 @@ class _Csem3State extends State<Csem3> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S3De()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S3De()));
+                  },
                   child: Container(
-                    child:  Center(child: Text("DE",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "DE",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -144,15 +175,24 @@ class _Csem3State extends State<Csem3> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S3Hs()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S3Hs()));
+                  },
                   child: Container(
-                    child: Center(child: Text("HS",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "HS",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -166,6 +206,7 @@ class _Csem3State extends State<Csem3> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

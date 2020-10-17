@@ -1,14 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem1/Csem1.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem2/Csem2.dart';
+import 'package:library_app/CE/Sem1/Csem1.dart';
+import 'package:library_app/CE/Sem2/Csem2.dart';
 import 'package:library_app/CE/Sem3/Csem3.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem4/Csem4.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem5/Csem5.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem6/Csem6.dart';
-import 'file:///E:/Project/library_app/lib/CE/Sem7/Csem7.dart';
+import 'package:library_app/CE/Sem4/Csem4.dart';
+import 'package:library_app/CE/Sem5/Csem5.dart';
+import 'package:library_app/CE/Sem6/Csem6.dart';
+import 'package:library_app/CE/Sem7/Csem7.dart';
 import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
 
 class CEDepart extends StatelessWidget {
   @override
@@ -34,8 +33,8 @@ class _CeState extends State<Ce> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => App()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home_screen()));
                 }),
             expandedHeight: 200.0,
             floating: false,
