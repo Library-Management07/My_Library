@@ -7,9 +7,6 @@ import 'package:library_app/CE/Sem6/S6Ios.dart';
 import 'package:library_app/CE/Sem6/S6Ip.dart';
 import 'package:library_app/CE/Sem6/S6Sop.dart';
 import 'package:library_app/CE/Sem6/S6Tc.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 import 'package:library_app/CE/Sem6/S6Hs.dart';
 
 class sem6 extends StatelessWidget {
@@ -28,17 +25,17 @@ class Csem6 extends StatefulWidget {
 }
 
 class _Csem6State extends State<Csem6> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ce()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Ce()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -54,24 +51,31 @@ class _Csem6State extends State<Csem6> {
           ),
         ];
       },
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Center(
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Ios()));
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Ios()));
                   },
                   child: Container(
-                    child: Center(child: Text("Internals of operating System",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Internals of operating System",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -84,15 +88,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                       onTap: (){ Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Ic()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Ic()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Information Security",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Information Security",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -105,15 +118,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){  Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Tc()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Tc()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Theory of Computation",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Theory of Computation",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -126,15 +148,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Dw()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Dw()));
+                  },
                   child: Container(
-                    child:  Center(child: Text("Data Ware housing and data mining",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Data Ware housing and data mining",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -147,15 +178,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Hs()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Hs()));
+                  },
                   child: Container(
-                    child: Center(child: Text("HS",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "HS",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -168,15 +208,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Sop()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Sop()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Service oriented Programming",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Service oriented Programming",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -189,15 +238,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S6Ip()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6Ip()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Digital Image Process",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Digital Image Process",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -210,15 +268,24 @@ class _Csem6State extends State<Csem6> {
               child: SizedBox(
                 width: 220.0,
                 child: InkWell(
-                  onTap: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>S6PP()));},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => S6PP()));
+                  },
                   child: Container(
-                    child: Center(child: Text("Programming in Python",style: TextStyle(fontWeight: FontWeight.bold,),)),
-                    padding: EdgeInsets.only(top:30.0,bottom: 30.0),
+                    child: Center(
+                        child: Text(
+                      "Programming in Python",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
                     margin: EdgeInsets.all(10.0),
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image:AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/sem.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -232,6 +299,7 @@ class _Csem6State extends State<Csem6> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

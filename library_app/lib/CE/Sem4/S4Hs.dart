@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem4/Csem4.dart';
-import 'package:flutter/material.dart';
-import 'package:library_app/Bookstore/CE.dart';
-import 'package:library_app/HomeScreen.dart';
-import 'package:library_app/Bookstore/BookStore.dart';
-import 'package:expansion_card/expansion_card.dart';
 
 class sem4 extends StatelessWidget {
   @override
@@ -22,17 +17,17 @@ class S4Hs extends StatefulWidget {
 }
 
 class _S4HsState extends State<S4Hs> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Csem4()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Csem4()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -54,19 +49,20 @@ class _S4HsState extends State<S4Hs> {
           ListView.builder(
             shrinkWrap: true,
             itemCount: _Books.length,
-            itemBuilder: (context,index){
-              final books=_Books[index];
+            itemBuilder: (context, index) {
+              final books = _Books[index];
               return ExpansionTile(
                 title: ListTile(
-                  title: Text(books.bookname,style:
-                  TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+                  title: Text(
+                    books.bookname,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 children: [
                   ListTile(
-                    title: Text("Available: "+ books.avail),
+                    title: Text("Available: " + books.avail),
                   ),
                 ],
               );
@@ -76,6 +72,7 @@ class _S4HsState extends State<S4Hs> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,11 +80,13 @@ class _S4HsState extends State<S4Hs> {
     );
   }
 }
+
 class Books {
-  Books({this.bookname,this.avail});
+  Books({this.bookname, this.avail});
   String bookname;
   String avail;
 }
+
 final List<Books> _Books = <Books>[
   Books(
     bookname: "Values and Ethics for 21st century",
