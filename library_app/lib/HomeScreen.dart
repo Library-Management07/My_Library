@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/Bookstore/BookStore.dart';
+import 'package:library_app/Account/MyAcc.dart';
 class Home_screen extends StatefulWidget {
   @override
   _Home_screenState createState() => _Home_screenState();
@@ -133,7 +134,7 @@ class _Home_screenState extends State<Home_screen> {
                         width: 180.0,
                         child: InkWell(
                           onTap: (){
-                            //    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyAcc()));
+                                Navigator.push(context,MaterialPageRoute(builder: (context)=>Account()));
                           },
                           child: Container(
                             child: Text("My account",style: TextStyle(fontWeight: FontWeight.bold,),),
