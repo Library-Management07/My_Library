@@ -8,6 +8,7 @@ import 'package:library_app/CE/Sem7/S7wm.dart';
 import 'package:library_app/CE/Sem7/S7Iot.dart';
 import 'package:library_app/CE/Sem7/S7bt.dart';
 
+// ignore: camel_case_types
 class sem7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

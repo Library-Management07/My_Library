@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem1/Csem1.dart';
-import 'package:flutter/material.dart';
 
-class sem1 extends StatelessWidget {
+class Sem1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -88,6 +87,7 @@ class Books {
   String avail;
 }
 
+// ignore: non_constant_identifier_names
 final List<Books> _Books = <Books>[
   Books(
     bookname: "The Surprising path to greater creativity",

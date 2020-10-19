@@ -6,6 +6,7 @@ import 'package:library_app/CE/Sem3/S3Dcn.dart';
 import 'package:library_app/CE/Sem3/S3Hs.dart';
 import 'package:library_app/CE/Sem3/S3De.dart';
 
+// ignore: camel_case_types
 class sem3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

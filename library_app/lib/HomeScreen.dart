@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/Bookstore/CE.dart';
 
+// ignore: camel_case_types
 class Home_screen extends StatefulWidget {
   @override
   _Home_screenState createState() => _Home_screenState();

@@ -9,6 +9,7 @@ import 'package:library_app/CE/Sem6/S6Sop.dart';
 import 'package:library_app/CE/Sem6/S6Tc.dart';
 import 'package:library_app/CE/Sem6/S6Hs.dart';
 
+// ignore: camel_case_types
 class sem6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

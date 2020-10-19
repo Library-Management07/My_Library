@@ -3,7 +3,7 @@ import 'package:library_app/Bookstore/CE.dart';
 import 'package:library_app/CE/Sem1/S1Env.dart';
 import 'package:library_app/CE/Sem1/S1Math.dart';
 
-class sem1 extends StatelessWidget {
+class Sem1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
