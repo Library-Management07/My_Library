@@ -35,7 +35,6 @@ dependencies:
   cupertino_icons:
   expansion_card:
   sign_button:
-  random_color:
   provider:
 
 dev_dependencies:
@@ -58,11 +57,9 @@ flutter:
    - assets/One.png
    - assets/ce.png
    - assets/it.png
-   - assets/sem.png
+   - assets/Round.png
    - assets/images/
    - assets/icons/
-
-
 
   # To add assets to your application, add an assets section, like this:
   # assets:

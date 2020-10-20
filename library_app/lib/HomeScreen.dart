@@ -144,8 +144,7 @@ class _Home_screenState extends State<Home_screen> {
                       width: 180.0,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => MyAcc()));
+                          Navigator.push(context,MaterialPageRoute(builder: (context)=>Account()));
                         },
                         child: Container(
                           child: Text(
