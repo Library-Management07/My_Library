@@ -1,30 +1,15 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem1/Csem1.dart';
-import 'package:library_app/CE/Sem2/Csem2.dart';
-import 'package:library_app/CE/Sem3/Csem3.dart';
-import 'package:library_app/CE/Sem4/Csem4.dart';
-import 'package:library_app/CE/Sem5/Csem5.dart';
-import 'package:library_app/CE/Sem6/Csem6.dart';
-import 'package:library_app/CE/Sem7/Csem7.dart';
-import 'package:library_app/HomeScreen.dart';
+import 'package:library_app/components/HomeScreen.dart';
 
-class CEDepart extends StatelessWidget {
+// ignore: camel_case_types
+class CE extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Ce(),
-    );
-  }
+  _CEState createState() => _CEState();
 }
 
-class Ce extends StatefulWidget {
-  @override
-  _CeState createState() => _CeState();
-}
-
-class _CeState extends State<Ce> {
+class _CEState extends State<CE> {
   nested() {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -52,220 +37,54 @@ class _CeState extends State<Ce> {
         ];
       },
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem1()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM1",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+        child: StreamBuilder(
+            stream: FirebaseFirestore.instance
+                .collection('CE')
+                .orderBy("NAME", descending: false)
+                .snapshots(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return CircularProgressIndicator();
+              } else {
+                return Column(
+                  children: [
+                    for (int i = 0; i < snapshot.data.docs.length; i++)
+                      Center(
+                        child: SizedBox(
+                          width: 220.0,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Csem1()));
+                            },
+                            child: Container(
+                              child: Center(
+                                  child: Text(
+                                snapshot.data.docs[i].get("NAME"),
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )),
+                              padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
+                              margin: EdgeInsets.all(10.0),
+                              //  height: 230.0,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("assets/sem.png"),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(25),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem2()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM2",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => sem3()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM3",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem4()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM4",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem5()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM5",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem6()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM6",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: SizedBox(
-                width: 220.0,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Csem7()));
-                  },
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "SEM7",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
-                    padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
-                    margin: EdgeInsets.all(10.0),
-                    //  height: 230.0,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+                  ],
+                );
+              }
+            }),
       ),
     );
   }

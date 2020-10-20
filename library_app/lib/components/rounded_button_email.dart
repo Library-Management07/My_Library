@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:library_app/components/text_field_container.dart';
 import 'package:library_app/constants.dart';
 
-class RoundedInputField extends StatelessWidget {
+class RoundedInputFieldEmail extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
-  const RoundedInputField({
+  const RoundedInputFieldEmail({
     Key key,
     this.hintText,
     this.icon = Icons.person,

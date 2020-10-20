@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:library_app/Account/MyAcc.dart';
 import 'package:library_app/Bookstore/CE.dart';
 
 // ignore: camel_case_types
@@ -53,7 +54,7 @@ class _Home_screenState extends State<Home_screen> {
                       child: InkWell(
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Ce()));
+                              MaterialPageRoute(builder: (context) => CE()));
                         },
                         child: Container(
                           child: Text(
@@ -143,7 +144,8 @@ class _Home_screenState extends State<Home_screen> {
                       width: 180.0,
                       child: InkWell(
                         onTap: () {
-                          //    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyAcc()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => MyAcc()));
                         },
                         child: Container(
                           child: Text(

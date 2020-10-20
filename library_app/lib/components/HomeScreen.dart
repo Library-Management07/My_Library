@@ -53,7 +53,7 @@ class _Home_screenState extends State<Home_screen> {
                       child: InkWell(
                         onTap: () {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => Ce()));
+                              MaterialPageRoute(builder: (context) => CE()));
                         },
                         child: Container(
                           child: Text(
