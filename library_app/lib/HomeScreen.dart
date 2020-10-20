@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+//import 'package:library_app/Account/MyAcc.dart';
 import 'package:library_app/Bookstore/BookStore.dart';
+import 'package:library_app/Mybook.dart';
 class Home_screen extends StatefulWidget {
   @override
   _Home_screenState createState() => _Home_screenState();
@@ -78,7 +79,7 @@ class _Home_screenState extends State<Home_screen> {
                         width: 200.0,
                         child: InkWell(
                           onTap: (){
-                        //    Navigator.push(context,MaterialPageRoute(builder: (context)=>App()));
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>MyBook()));
                           },
                           child: Container(
                             child: Text("Mybook",style: TextStyle(fontWeight: FontWeight.bold,),),
@@ -109,7 +110,7 @@ class _Home_screenState extends State<Home_screen> {
                         child: SizedBox(
                           child: InkWell(
                             onTap: (){
-                              //    Navigator.push(context,MaterialPageRoute(builder: (context)=>App()));
+                                //  Navigator.push(context,MaterialPageRoute(builder: (context)=>Search()));
                             },
                             child: Container(
                               child: Text("Search",style: TextStyle(fontWeight: FontWeight.bold,),),
@@ -133,7 +134,7 @@ class _Home_screenState extends State<Home_screen> {
                         width: 180.0,
                         child: InkWell(
                           onTap: (){
-                            //    Navigator.push(context,MaterialPageRoute(builder: (context)=>MyAcc()));
+                       //         Navigator.push(context,MaterialPageRoute(builder: (context)=>Account()));
                           },
                           child: Container(
                             child: Text("My account",style: TextStyle(fontWeight: FontWeight.bold,),),
