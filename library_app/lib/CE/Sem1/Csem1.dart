@@ -69,7 +69,7 @@ class _Csem1State extends State<Csem1> {
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/Round.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),
@@ -99,7 +99,7 @@ class _Csem1State extends State<Csem1> {
                     //  height: 230.0,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/sem.png"),
+                        image: AssetImage("assets/Round.png"),
                         fit: BoxFit.cover,
                       ),
                       borderRadius: BorderRadius.circular(25),

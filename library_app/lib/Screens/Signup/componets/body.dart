@@ -2,7 +2,6 @@ import 'package:library_app/components/rounded_button_contactNo.dart';
 import 'package:library_app/components/rounded_button_email.dart';
 import 'package:library_app/components/rounded_button_id.dart';
 import 'package:library_app/components/rounded_button_name.dart';
-import 'or_divider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +11,7 @@ import 'package:library_app/Screens/Signup/componets/background.dart';
 import 'package:library_app/components/already_have_an_account.dart';
 import 'package:library_app/components/rounded_button.dart';
 import 'package:library_app/components/rounded_password_field.dart';
+import 'or_divider.dart';
 import 'dart:async';
 import 'dart:core';
 
@@ -104,34 +104,33 @@ class Body extends StatelessWidget {
               },
             ),
             RoundedButton(
-                text: "SIGNUP",
-                press: () async {
+              text: "SIGNUP",
+              press: () async {
+                try {
                   UserCredential result =
                       await _auth.createUserWithEmailAndPassword(
-                          email: email, password: password);
+                          email: email.trim(), password: password.trim());
                   User user = result.user;
-                  /* User use = FirebaseAuth.instance.currentUser;
-                  if (!use.emailVerified) {
-                    await use.sendEmailVerification();
-                  }*/
-                  /*FirebaseAuth us = FirebaseAuth.instance;
-                  String code = 'xxxxxx';
                   try {
-                    await us.checkActionCode(code);
-                    await us.applyActionCode(code);
-                    us.currentUser.reload();
-                  } on FirebaseAuthException catch (e) {
-                    if (e.code == 'invalid-action-code') {
-                      print('The code is invalid.');
-                    }
-                  }*/
-                  await UserDatabase(uid: user.uid)
-                      .updateuserdata(name, id, contactNo, email);
-                  Navigator.push(
-                      context,
-                      new MaterialPageRoute(
-                          builder: (__) => new Home_screen()));
-                }),
+                    await user.sendEmailVerification();
+                    //add user on firebase firestore for user record
+                    await UserDatabase(uid: user.uid).updateuserdata(
+                        name, id.trim(), contactNo.trim(), email.trim());
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (__) => new Home_screen()));
+                  } catch (e) {
+                    user.delete();
+                    print("verification not complete");
+                    return;
+                  }
+                } catch (e) {
+                  print(e.toString());
+                  return null;
+                }
+              },
+            ),
             SizedBox(height: size.height * 0.01),
             AlreadyHaveAnAccountCheck(
               login: false,
