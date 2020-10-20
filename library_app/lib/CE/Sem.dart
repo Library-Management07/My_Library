@@ -1,15 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/CE/Sem.dart';
-import 'package:library_app/components/HomeScreen.dart';
+import 'package:library_app/CE/Subject.dart';
 
-// ignore: camel_case_types
-class CE extends StatefulWidget {
+// ignore: must_be_immutable
+class Sem extends StatefulWidget {
+  // ignore: non_constant_identifier_names
+  String Semester, tsem;
+  // ignore: non_constant_identifier_names
+  Sem({this.Semester, this.tsem});
   @override
-  _CEState createState() => _CEState();
+  _SemState createState() => _SemState();
 }
 
-class _CEState extends State<CE> {
+class _SemState extends State<Sem> {
   nested() {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -18,8 +21,7 @@ class _CEState extends State<CE> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_screen()));
+                  Navigator.pop(context);
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -27,7 +29,7 @@ class _CEState extends State<CE> {
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-              title: Text("CE"),
+              title: Text(widget.tsem),
               background: Image.asset(
                 "assets/Menu_Home.png",
                 fit: BoxFit.cover,
@@ -40,11 +42,16 @@ class _CEState extends State<CE> {
         child: StreamBuilder(
             stream: FirebaseFirestore.instance
                 .collection('CE')
-                .orderBy("NAME", descending: false)
+                .doc(widget.Semester)
+                .collection('SUBJECTS')
+                .orderBy('NAME', descending: false)
                 .snapshots(),
+            // ignore: missing_return
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return CircularProgressIndicator();
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
               } else {
                 return Column(
                   children: [
@@ -57,10 +64,11 @@ class _CEState extends State<CE> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Sem(
-                                            Semester: snapshot.data.docs[i].id,
-                                            tsem: snapshot.data.docs[i]
-                                                .get("NAME"),
+                                      builder: (context) => Subject(
+                                            semid: widget.Semester,
+                                            subid: snapshot.data.docs[i].id,
+                                            subname: snapshot.data.docs[i]
+                                                .get('NAME'),
                                           )));
                             },
                             child: Container(
@@ -95,8 +103,6 @@ class _CEState extends State<CE> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: nested(),
-    );
+    return Scaffold(body: nested());
   }
 }

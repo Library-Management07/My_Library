@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Account/MyAcc.dart';
 import 'package:random_color/random_color.dart';
 
 class AccountSetting extends StatelessWidget {
@@ -71,8 +70,7 @@ class _AccSettingState extends State<AccSetting> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Account()));
+                  Navigator.pop(context);
                 }),
             expandedHeight: 200.0,
             floating: false,

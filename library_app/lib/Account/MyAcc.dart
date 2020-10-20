@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/Account/AccSetting.dart';
-import 'package:library_app/HomeScreen.dart';
 import 'package:library_app/Screens/Welcome/welcome_screen.dart';
 import 'package:random_color/random_color.dart';
 
-class Account extends StatelessWidget {
+class MyAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: MyAcc(),
     );
   }
@@ -22,7 +24,8 @@ class MyAcc extends StatefulWidget {
 class _MyAccState extends State<MyAcc> {
   bool toggleValue = false;
 
-  Widget _contactList(String name, String img, String email) {
+  Widget _contactList() {
+    String name, img, email;
     RandomColor _randomColor = RandomColor();
     Color _color = _randomColor.randomColor(
       colorBrightness: ColorBrightness.light,
@@ -71,8 +74,7 @@ class _MyAccState extends State<MyAcc> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_screen()));
+                  Navigator.pop(context);
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -91,7 +93,7 @@ class _MyAccState extends State<MyAcc> {
       },
       body: ListView(
         children: [
-          _contactList("Heer", "", "heer@gmail.com"),
+          _contactList(),
           Divider(
             height: 30.0,
             color: Colors.blueGrey,

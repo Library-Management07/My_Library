@@ -10,23 +10,24 @@ class MyBook extends StatelessWidget {
     );
   }
 }
+
 class Mybook extends StatefulWidget {
   @override
   _MybookState createState() => _MybookState();
 }
 
 class _MybookState extends State<Mybook> {
-  nested(){
+  nested() {
     return NestedScrollView(
-      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled){
+      headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
-                onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Home_screen()));
-                }
-            ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home_screen()));
+                }),
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.lightGreen,
@@ -42,10 +43,10 @@ class _MybookState extends State<Mybook> {
           ),
         ];
       },
-      body:
-        Text("Hello"),
+      body: Text("Hello"),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,4 +54,3 @@ class _MybookState extends State<Mybook> {
     );
   }
 }
-
