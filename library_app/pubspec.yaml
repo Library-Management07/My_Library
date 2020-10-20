@@ -37,10 +37,15 @@ dependencies:
   sign_button: ^0.0.9
 
 dev_dependencies:
+  flutter_launcher_icons: "^0.8.0"
+
   flutter_test:
     sdk: flutter
 
-
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/final logo.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
