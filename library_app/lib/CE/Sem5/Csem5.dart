@@ -9,6 +9,7 @@ import 'package:library_app/CE/Sem5/S5da.dart';
 import 'package:library_app/CE/Sem5/S5hs.dart';
 import 'package:library_app/CE/Sem5/S5Mad.dart';
 
+// ignore: camel_case_types
 class sem5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class _Csem5State extends State<Csem5> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Ce()));
+                      context, MaterialPageRoute(builder: (context) => CE()));
                 }),
             expandedHeight: 200.0,
             floating: false,

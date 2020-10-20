@@ -6,6 +6,7 @@ import 'package:library_app/CE/Sem4/S4Hs.dart';
 import 'package:library_app/CE/Sem4/S4Py.dart';
 import 'package:library_app/CE/Sem4/S4Mco.dart';
 
+// ignore: camel_case_types
 class sem4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class _Csem4State extends State<Csem4> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Ce()));
+                      context, MaterialPageRoute(builder: (context) => CE()));
                 }),
             expandedHeight: 200.0,
             floating: false,

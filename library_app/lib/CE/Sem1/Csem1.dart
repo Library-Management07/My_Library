@@ -3,7 +3,7 @@ import 'package:library_app/Bookstore/CE.dart';
 import 'package:library_app/CE/Sem1/S1Env.dart';
 import 'package:library_app/CE/Sem1/S1Math.dart';
 
-class sem1 extends StatelessWidget {
+class Sem1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,7 +28,7 @@ class _Csem1State extends State<Csem1> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Ce()));
+                      context, MaterialPageRoute(builder: (context) => CE()));
                 }),
             expandedHeight: 200.0,
             floating: false,

@@ -8,6 +8,7 @@ import 'package:library_app/CE/Sem7/S7wm.dart';
 import 'package:library_app/CE/Sem7/S7Iot.dart';
 import 'package:library_app/CE/Sem7/S7bt.dart';
 
+// ignore: camel_case_types
 class sem7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _Csem7State extends State<Csem7> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Ce()));
+                      context, MaterialPageRoute(builder: (context) => CE()));
                 }),
             expandedHeight: 200.0,
             floating: false,

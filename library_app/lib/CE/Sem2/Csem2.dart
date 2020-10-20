@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/Bookstore/CE.dart';
 
-class sem2 extends StatelessWidget {
+class Sem2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +26,7 @@ class _Csem2State extends State<Csem2> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => Ce()));
+                      context, MaterialPageRoute(builder: (context) => CE()));
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -87,6 +87,7 @@ class Books {
   String avail;
 }
 
+// ignore: non_constant_identifier_names
 final List<Books> _Books = <Books>[
   Books(
     bookname: 'ABC',

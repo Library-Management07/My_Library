@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem6/Csem6.dart';
 
+// ignore: camel_case_types
 class sem6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,6 +88,7 @@ class Books {
   String avail;
 }
 
+// ignore: non_constant_identifier_names
 final List<Books> _Books = <Books>[
   Books(
     bookname: "The Design of Unix operating System",

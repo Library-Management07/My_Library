@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/CE/Sem7/Csem7.dart';
 
+// ignore: camel_case_types
 class sem7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,6 +88,7 @@ class Books {
   String avail;
 }
 
+// ignore: non_constant_identifier_names
 final List<Books> _Books = <Books>[
   Books(
     bookname: "Introduction to machine Learning",
