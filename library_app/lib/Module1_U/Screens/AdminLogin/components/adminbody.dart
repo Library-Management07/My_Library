@@ -1,11 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Module1_U/HomeScreen.dart';
 import 'package:library_app/Module1_U/Screens/Login/components/background.dart';
 import 'package:library_app/Module1_U/components/rounded_button.dart';
 import 'package:library_app/Module1_U/components/rounded_button_email.dart';
 import 'package:library_app/Module1_U/components/rounded_password_field.dart';
+import 'package:library_app/Module2_A/HomeScreen2.dart';
 
 // ignore: must_be_immutable
 class AdminBody extends StatelessWidget {
@@ -46,7 +46,6 @@ class AdminBody extends StatelessWidget {
             ),
             RoundedButton(
               text: "LOGIN AS ADMIN",
-              //color: Colors.deepOrange,
               press: () async {
                 _auth
                     .signInWithEmailAndPassword(
@@ -55,7 +54,7 @@ class AdminBody extends StatelessWidget {
                   Navigator.push(
                       context,
                       new MaterialPageRoute(
-                          builder: (__) => new Home_screen()));
+                          builder: (__) => new Home_screen2()));
                 }).catchError(
                   (e) {
                     print(e);
