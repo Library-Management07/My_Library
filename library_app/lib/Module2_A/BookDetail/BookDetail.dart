@@ -16,7 +16,7 @@ class UserDatabas {
   ) async {
     return await usercollection
         .doc(uid)
-        .set({"BOOKNAME": bname, "ID": id, "EMAIL": email, "UID": uid});
+        .set({"BOOKNAME": bname, "ID": id, "EMAIL": email});
   }
 }
 

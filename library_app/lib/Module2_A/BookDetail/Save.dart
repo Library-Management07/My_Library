@@ -33,7 +33,7 @@ class _saveState extends State<save> {
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
-            .collection('bd')
+            .collection('db')
             .orderBy('ID', descending: false)
             .snapshots(),
         builder: (context, snapshot) {
@@ -44,41 +44,40 @@ class _saveState extends State<save> {
           } else {
             return Column(
               children: [
-                for (int i = 0; i < snapshot.data.docs.length; i++)
-                  Wrap(
-                    children: [
-                      ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: snapshot.data.docs.length,
-                        itemBuilder: (context, i) {
-                          return ExpansionTile(
-                            title: ListTile(
-                              leading: Icon(Icons.person),
-                              title: Text(
-                                "Id: " + snapshot.data.docs[i]['ID'],
-                              ),
+                // for (int i = 0; i < snapshot.data.docs.length; i++)
+                Wrap(
+                  children: [
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: snapshot.data.docs.length,
+                      itemBuilder: (context, i) {
+                        return ExpansionTile(
+                          title: ListTile(
+                            leading: Icon(Icons.person),
+                            title: Text(
+                              "Id: " + snapshot.data.docs[i].get('ID'),
                             ),
-                            children: [
-                              ListTile(
-                                title: Text(
-                                  "Email: " +
-                                      snapshot.data.docs[i].get('Email'),
-                                ),
-                                leading: Icon(Icons.email),
+                          ),
+                          children: [
+                            ListTile(
+                              title: Text(
+                                "Email: " + snapshot.data.docs[i].get('EMAIL'),
                               ),
-                              ListTile(
-                                title: Text(
-                                  "BooKName: " +
-                                      snapshot.data.docs[i].get('BOOKNAME'),
-                                ),
-                                leading: Icon(Icons.library_books),
+                              leading: Icon(Icons.email),
+                            ),
+                            ListTile(
+                              title: Text(
+                                "BooKName: " +
+                                    snapshot.data.docs[i].get('BOOKNAME'),
                               ),
-                            ],
-                          );
-                        },
-                      ),
-                    ],
-                  )
+                              leading: Icon(Icons.library_books),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ],
+                )
               ],
             );
           }
