@@ -6,6 +6,7 @@ import 'package:library_app/Module1_U/Screens/Welcome/components/background.dart
 import 'package:library_app/Module1_U/components/rounded_button.dart';
 import 'package:library_app/Module1_U/components/rounded_button_code.dart';
 
+// ignore: must_be_immutable
 class Body extends StatelessWidget {
   String code, dcode = "qwerty";
   @override
