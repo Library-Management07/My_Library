@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Save extends StatelessWidget {
@@ -12,6 +13,8 @@ class Save extends StatelessWidget {
 
 // ignore: camel_case_types
 class save extends StatefulWidget {
+  String detail;
+  save({this.detail});
   @override
   _saveState createState() => _saveState();
 }
@@ -21,54 +24,66 @@ class _saveState extends State<save> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.purple,
-          title: Text("Details of books"),
-          actions: [
-            IconButton(icon: Icon(Icons.delete), onPressed: () {}),
-          ],
-        ),
-        body: Wrap(
-          children: [
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: _details.length,
-              itemBuilder: (context, index) {
-                final details = _details[index];
-                return ExpansionTile(
-                  title: ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text(details.id),
-                  ),
-                  children: [
-                    ListTile(
-                      title: Text("Email id: " + details.email),
-                      leading: Icon(Icons.email),
-                    ),
-                    ListTile(
-                      title: Text("Book name: " + details.bname),
-                      leading: Icon(Icons.library_books),
-                    ),
-                  ],
-                );
-              },
-            ),
-          ],
-        ));
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text("Details of books"),
+        actions: [
+          IconButton(icon: Icon(Icons.delete), onPressed: () {}),
+        ],
+      ),
+      body: StreamBuilder(
+        stream: FirebaseFirestore.instance
+            .collection('bd')
+            .orderBy('ID', descending: false)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return Column(
+              children: [
+                for (int i = 0; i < snapshot.data.docs.length; i++)
+                  Wrap(
+                    children: [
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: snapshot.data.docs.length,
+                        itemBuilder: (context, i) {
+                          return ExpansionTile(
+                            title: ListTile(
+                              leading: Icon(Icons.person),
+                              title: Text(
+                                "Id: " + snapshot.data.docs[i]['ID'],
+                              ),
+                            ),
+                            children: [
+                              ListTile(
+                                title: Text(
+                                  "Email: " +
+                                      snapshot.data.docs[i].get('Email'),
+                                ),
+                                leading: Icon(Icons.email),
+                              ),
+                              ListTile(
+                                title: Text(
+                                  "BooKName: " +
+                                      snapshot.data.docs[i].get('BOOKNAME'),
+                                ),
+                                leading: Icon(Icons.library_books),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
+                    ],
+                  )
+              ],
+            );
+          }
+        },
+      ),
+    );
   }
 }
-
-class Details {
-  Details({this.id, this.email, this.bname});
-  String id;
-  String email;
-  String bname;
-}
-
-final List<Details> _details = <Details>[
-  Details(
-    id: '098',
-    email: 'heer',
-    bname: 'qwer',
-  ),
-];

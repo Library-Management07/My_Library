@@ -18,13 +18,6 @@ class _SemState extends State<Sem> {
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return <Widget>[
           SliverAppBar(
-            /*
-            leading: IconButton(
-                icon: Icon(Icons.arrow_back_ios),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => CE()));
-                }),*/
             expandedHeight: 200.0,
             floating: false,
             backgroundColor: Colors.purple[700],
