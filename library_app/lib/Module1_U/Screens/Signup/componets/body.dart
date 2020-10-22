@@ -39,19 +39,19 @@ class UserDatabase {
   }
 }
 
-class MUser {
-  final String uid;
-  MUser({this.uid});
-}
+// class MUser {
+//   final String uid;
+//   MUser({this.uid});
+// }
 
-MUser _userFromFirebaseUser(User user) {
-  return user != null ? MUser(uid: user.uid) : null;
-}
+// MUser _userFromFirebaseUser(User user) {
+//   return user != null ? MUser(uid: user.uid) : null;
+// }
 
-Stream<MUser> get user {
-  final _auth = FirebaseAuth.instance;
-  return _auth.authStateChanges().map(_userFromFirebaseUser);
-}
+// Stream<MUser> get user {
+//   final _auth = FirebaseAuth.instance;
+//   return _auth.authStateChanges().map(_userFromFirebaseUser);
+// }
 
 // ignore: must_be_immutable
 class Body extends StatelessWidget {

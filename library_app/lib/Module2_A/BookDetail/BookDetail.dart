@@ -1,5 +1,24 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/Module2_A/HomeScreen2.dart';
+
+class UserDatabas {
+  String uid;
+  UserDatabas({this.uid});
+
+  final CollectionReference usercollection =
+      FirebaseFirestore.instance.collection('db');
+
+  Future updateuserdat(
+    String bname,
+    String id,
+    String email,
+  ) async {
+    return await usercollection
+        .doc(uid)
+        .set({"BOOKNAME": bname, "ID": id, "EMAIL": email});
+  }
+}
 
 class BookDetail extends StatefulWidget {
   @override
@@ -34,7 +53,7 @@ class _BookDetailState extends State<BookDetail> {
         ];
       },
       body: UserForm(
-        user: User(),
+        user: Usere(),
       ),
     );
   }
@@ -51,7 +70,7 @@ class _BookDetailState extends State<BookDetail> {
 typedef OnDelete();
 
 class UserForm extends StatefulWidget {
-  final User user;
+  final Usere user;
   final state = _UserFormState();
   final OnDelete onDelete;
   UserForm({Key key, this.user, this.onDelete}) : super(key: key);
@@ -62,6 +81,7 @@ class UserForm extends StatefulWidget {
 }
 
 class _UserFormState extends State<UserForm> {
+  String email, bname, id;
   final form = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -76,7 +96,13 @@ class _UserFormState extends State<UserForm> {
                   title: Text("User Form"),
                   centerTitle: true,
                   backgroundColor: Colors.purple,
-                  leading: Icon(Icons.people),
+                  leading: IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      UserDatabas()
+                          .updateuserdat(bname, id.trim(), email.trim());
+                    },
+                  ),
                   actions: [
                     IconButton(
                       icon: Icon(Icons.delete),
@@ -87,11 +113,14 @@ class _UserFormState extends State<UserForm> {
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: TextFormField(
-                    initialValue: widget.user.email,
-                    onSaved: (val) => widget.user.email = val,
-                    validator: (val) => val.contains('@')
-                        ? 'Email is valid'
-                        : 'Email is invalid',
+                    onChanged: (value) {
+                      email = value;
+                    },
+                    //initialValue: widget.user.email,
+                    //onSaved: (val) => widget.user.email = val,
+                    // validator: (val) => val.contains('@')
+                    //     ? 'Email is valid'
+                    //     : 'Email is invalid',
                     decoration: InputDecoration(
                       labelText: 'Email :',
                       hintText: 'Enter Email',
@@ -101,10 +130,13 @@ class _UserFormState extends State<UserForm> {
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: TextFormField(
-                    initialValue: widget.user.id,
-                    onSaved: (val) => widget.user.id = val,
-                    validator: (val) =>
-                        val.contains('ce') ? 'Id is valid' : 'Id is invalid',
+                    onChanged: (value) {
+                      id = value;
+                    },
+                    // initialValue: widget.user.id,
+                    // onSaved: (val) => widget.user.id = val,
+                    // validator: (val) =>
+                    //     val.contains('ce') ? 'Id is valid' : 'Id is invalid',
                     decoration: InputDecoration(
                       labelText: 'Id: ',
                       hintText: 'Enter Id',
@@ -114,11 +146,14 @@ class _UserFormState extends State<UserForm> {
                 Padding(
                   padding: EdgeInsets.all(8),
                   child: TextFormField(
-                    initialValue: widget.user.bname,
-                    onSaved: (val) => widget.user.bname = val,
-                    validator: (val) => val.length > 3
-                        ? 'Bookname is valid'
-                        : 'Book Name is invalid',
+                    onChanged: (value) {
+                      bname = value;
+                    },
+                    // initialValue: widget.user.bname,
+                    // onSaved: (val) => widget.user.bname = val,
+                    // validator: (val) => val.length > 3
+                    //     ? 'Bookname is valid'
+                    //     : 'Book Name is invalid',
                     decoration: InputDecoration(
                       labelText: 'Book Name: ',
                       hintText: 'Enter BookName',
@@ -138,9 +173,9 @@ class _UserFormState extends State<UserForm> {
   }
 }
 
-class User {
+class Usere {
   String id;
   String email;
   String bname;
-  User({this.id = '', this.email = ' ', this.bname = ''});
+  Usere({this.id = '', this.email = ' ', this.bname = ''});
 }

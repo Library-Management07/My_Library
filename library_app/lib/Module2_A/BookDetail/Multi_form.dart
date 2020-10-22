@@ -10,9 +10,9 @@ class Multi_form extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Multi_formState extends State<Multi_form> {
-  List<User> users = [];
+  List<Usere> users = [];
   List<UserForm> forms = [];
-  User u = User();
+  Usere u = Usere();
   @override
   Widget build(BuildContext context) {
     forms.clear();
@@ -53,7 +53,7 @@ class _Multi_formState extends State<Multi_form> {
 
   void onAddForm() {
     setState(() {
-      users.add(User());
+      users.add(Usere());
     });
   }
 }
