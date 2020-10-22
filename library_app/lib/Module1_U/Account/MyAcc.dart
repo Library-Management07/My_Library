@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:library_app/Module1_U/Account/AccSetting.dart';
 import 'package:library_app/Module1_U/Screens/Welcome/welcome_screen.dart';
+import 'package:library_app/Module2_A/HomeScreen2.dart';
 
 class MyAccount extends StatelessWidget {
   @override
@@ -21,7 +22,6 @@ class Account extends StatefulWidget {
 
 class _AccountState extends State<Account> {
   final userid = FirebaseAuth.instance.currentUser.uid;
-  String n;
   nested() {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -30,7 +30,8 @@ class _AccountState extends State<Account> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Home_screen2()));
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -48,7 +49,10 @@ class _AccountState extends State<Account> {
         ];
       },
       body: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection('users').snapshots(),
+          stream: FirebaseFirestore.instance
+              .collection('users')
+              .where('uid', isEqualTo: userid)
+              .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return Center(
@@ -57,24 +61,24 @@ class _AccountState extends State<Account> {
             } else {
               return ListView(
                 children: [
-                  for (int i = 0; i < snapshot.data.docs.length; i++)
-                    Padding(
-                      padding: EdgeInsets.all(5.0),
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 30,
-                          backgroundColor: Colors.purple[700],
-                          child: ClipOval(
-                            child: SizedBox(
-                              width: 100,
-                              height: 100,
-                            ),
+                  //snapshot.data.docs.get('name'),
+                  Padding(
+                    padding: EdgeInsets.all(5.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.purple[700],
+                        child: ClipOval(
+                          child: SizedBox(
+                            width: 100,
+                            height: 100,
                           ),
                         ),
-                        title: Text('n'),
-                        subtitle: Text('ngv'),
                       ),
+                      title: Text('n'),
+                      subtitle: Text('ngv'),
                     ),
+                  ),
                   Divider(
                     height: 10.0,
                     color: Colors.blueGrey,

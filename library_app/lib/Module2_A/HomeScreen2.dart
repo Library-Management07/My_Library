@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/Module1_U/Account/MyAcc.dart';
 import 'package:library_app/Module2_A/BookDetail/Multi_form.dart';
+import 'package:library_app/Module2_A/StudentDetail/StudentDetail.dart';
 
 // ignore: camel_case_types
 class Home_screen2 extends StatefulWidget {
@@ -115,16 +116,19 @@ class _Home_screen2State extends State<Home_screen2> {
                       child: SizedBox(
                         child: InkWell(
                           onTap: () {
-                            //    Navigator.push(context,MaterialPageRoute(builder: (context)=>App()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Studentdetail()));
                           },
                           child: Container(
                             child: Text(
-                              "Search",
+                              "Student Detail",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            padding: EdgeInsets.only(top: 100, left: 70),
+                            padding: EdgeInsets.only(top: 100, left: 45),
                             margin: EdgeInsets.all(10.0),
                             height: 230.0,
                             decoration: BoxDecoration(
