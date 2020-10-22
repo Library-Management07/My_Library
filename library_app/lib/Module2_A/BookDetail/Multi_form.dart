@@ -27,15 +27,6 @@ class _Multi_formState extends State<Multi_form> {
       appBar: AppBar(
         title: Text("Book issued Details"),
         backgroundColor: Colors.purple,
-        actions: [
-          FlatButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => save()));
-            },
-            child: Text('Save'),
-          ),
-        ],
       ),
       body: users.length <= 0
           ? Center(
