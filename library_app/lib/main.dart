@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Module1_U/Screens/Welcome/welcome_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,3 +16,17 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+class WelcomeScreen extends StatefulWidget {
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black,
+    );
+  }
+}
+
