@@ -33,7 +33,7 @@ class _AccSettingState extends State<AccSetting> {
                 }),
             expandedHeight: 200.0,
             floating: false,
-            backgroundColor: Colors.lightGreen,
+            backgroundColor: Colors.purple[700],
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
