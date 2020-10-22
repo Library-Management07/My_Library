@@ -24,13 +24,6 @@ class _saveState extends State<save> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text("Details of books"),
-        actions: [
-          IconButton(icon: Icon(Icons.delete), onPressed: () {}),
-        ],
-      ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('db')
