@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 
 void main() {
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-      routes: <String, WidgetBuilder>{
-        // "/Home": (BuildContext context) => new Home()
-      }));
+  return runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp();
+  }
 }
 
 class LoginPage extends StatelessWidget {
@@ -18,14 +19,6 @@ class LoginPage extends StatelessWidget {
         //padding: const EdgeInsets.symmetric(vertical: 30.0),
         width: double.infinity,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            colors: [
-              Colors.blue[900],
-              Colors.purple[800],
-              Colors.orange[400],
-            ],
-          ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
