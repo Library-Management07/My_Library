@@ -21,13 +21,6 @@ class _saveState extends State<save> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.purple,
-          title: Text("Details of books"),
-          actions: [
-            IconButton(icon: Icon(Icons.delete), onPressed: () {}),
-          ],
-        ),
         body: Wrap(
           children: [
             ListView.builder(

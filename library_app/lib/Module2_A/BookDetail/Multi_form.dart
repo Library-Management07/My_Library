@@ -27,23 +27,9 @@ class _Multi_formState extends State<Multi_form> {
       appBar: AppBar(
         title: Text("Book issued Details"),
         backgroundColor: Colors.purple,
-        actions: [
-          FlatButton(
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => save()));
-            },
-            child: Text('Save'),
-          ),
-        ],
       ),
       body: users.length <= 0
-          ? Center(
-              child: Container(
-                child: Center(
-                    child: Text("Add a form by tapping [+] button below")),
-              ),
-            )
+          ? Save()
           : ListView.builder(
               itemCount: users.length,
               itemBuilder: (_, i) => UserForm(
