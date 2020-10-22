@@ -28,8 +28,7 @@ class _AccSettingState extends State<AccSetting> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MyAccount()));
+                  Navigator.pop(context);
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -53,7 +52,7 @@ class _AccSettingState extends State<AccSetting> {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30,
-                backgroundColor: Colors.greenAccent,
+                backgroundColor: Colors.purple[700],
                 child: ClipOval(
                   child: SizedBox(
                     width: 100,
@@ -61,8 +60,8 @@ class _AccSettingState extends State<AccSetting> {
                   ),
                 ),
               ),
-              title: Text("Heer"),
-              subtitle: Text("heer@gmail.com"),
+              title: Text("Patel Jay"),
+              subtitle: Text("19ce100@charusat.edu.in"),
             ),
           ),
           Divider(
@@ -76,7 +75,7 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("UserName:"),
+                  child: Text("Id: 19ce100"),
                 ),
               ),
             ),
@@ -92,7 +91,7 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("Email Id:"),
+                  child: Text("Email Id: 19ce100@charusat.edu.in"),
                 ),
               ),
             ),
@@ -108,7 +107,7 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("Contact Number: "),
+                  child: Text("Contact Number: 9724975288"),
                 ),
               ),
             ),

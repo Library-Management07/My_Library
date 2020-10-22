@@ -38,7 +38,6 @@ class _StudentdetailState extends State<Studentdetail> {
           } else {
             return Wrap(
               children: [
-                // for (int i = 0; i < snapshot.data.docs.length; i++)
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: snapshot.data.docs.length,
@@ -78,20 +77,3 @@ class _StudentdetailState extends State<Studentdetail> {
     );
   }
 }
-
-// class Alloc {
-//   Alloc({this.cno, this.email, this.id, this.name});
-//   String cno;
-//   String email;
-//   String id;
-//   String name;
-// }
-
-// final List<Alloc> _alloc = <Alloc>[
-//   Alloc(
-//     cno: '999',
-//     email: 'h@gmail.com',
-//     id: '19ce98',
-//     name: 'heer',
-//   ),
-// ];

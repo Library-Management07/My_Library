@@ -30,8 +30,7 @@ class _AccountState extends State<Account> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_screen2()));
+                  Navigator.pop(context);
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -49,258 +48,143 @@ class _AccountState extends State<Account> {
         ];
       },
       body: StreamBuilder(
-          stream: FirebaseFirestore.instance
-              .collection('users')
-              .where('uid', isEqualTo: userid)
-              .snapshots(),
-          builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            } else {
-              return ListView(
-                children: [
-                  //snapshot.data.docs.get('name'),
-                  Padding(
-                    padding: EdgeInsets.all(5.0),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 30,
-                        backgroundColor: Colors.purple[700],
-                        child: ClipOval(
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                          ),
-                        ),
-                      ),
-                      title: Text('n'),
-                      subtitle: Text('ngv'),
-                    ),
-                  ),
-                  Divider(
-                    height: 10.0,
-                    color: Colors.blueGrey,
-                  ),
-                  SizedBox(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AccSetting()));
-                      },
-                      child: Container(
-                        height: 60.0,
-                        color: Colors.black12,
-                        child: Container(
-                          child: Padding(
-                            padding: const EdgeInsets.all(22.0),
-                            child: Text("View Account Setting"),
-                          ),
+        stream: FirebaseFirestore.instance
+            .collection('users')
+            .where('uid', isEqualTo: userid)
+            .snapshots(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return ListView(
+              shrinkWrap: true,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      backgroundColor: Colors.purple[700],
+                      child: ClipOval(
+                        child: SizedBox(
+                          width: 100,
+                          height: 100,
                         ),
                       ),
                     ),
+                    //snapshot.data.docs.get('name')
+                    title: Text('Patel Jay'),
+                    //snapshot.data.docs.get('email')
+                    subtitle: Text('19ce100@charusat.edu.in'),
                   ),
-                  Divider(
-                    height: 30.0,
-                    color: Colors.blueGrey,
-                  ),
-                  SizedBox(
+                ),
+                Divider(
+                  height: 10.0,
+                  color: Colors.blueGrey,
+                ),
+                SizedBox(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AccSetting()));
+                    },
                     child: Container(
-                      height: 60,
+                      height: 60.0,
                       color: Colors.black12,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Text("Dark Theme"),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          InkWell(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.lightbulb_outline,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    height: 30.0,
-                    color: Colors.blueGrey,
-                  ),
-                  SizedBox(
-                    child: Container(
-                      height: 60,
-                      color: Colors.black12,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Text("Notificaion"),
-                          ),
-                          SizedBox(
-                            width: 8,
-                          ),
-                          Switch(value: true, onChanged: null)
-                        ],
-                      ),
-                    ),
-                  ),
-                  Divider(
-                    height: 30.0,
-                    color: Colors.blueGrey,
-                  ),
-                  SizedBox(
-                    child: InkWell(
-                      onTap: () {
-                        FirebaseAuth.instance.signOut();
-                        User user = FirebaseAuth.instance.currentUser;
-                        user.delete();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => WelcomeScreen()));
-                      },
                       child: Container(
-                        height: 60,
-                        color: Colors.black12,
                         child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text("Sign out"),
+                          padding: const EdgeInsets.all(22.0),
+                          child: Text("View Account Setting"),
                         ),
                       ),
                     ),
                   ),
-                ],
-              );
-            }
-          }),
-
-      /*ListView(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(5.0),
-            child: ListTile(
-              leading: CircleAvatar(
-                radius: 30,
-                backgroundColor: Colors.purple[700],
-                child: ClipOval(
-                  child: SizedBox(
-                    width: 100,
-                    height: 100,
-                  ),
                 ),
-              ),
-              title: Text(userid),
-              subtitle: Text("heer@gmail.com"),
-            ),
-          ),
-          Divider(
-            height: 10.0,
-            color: Colors.blueGrey,
-          ),
-          SizedBox(
-            child: InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AccSetting()));
-              },
-              child: Container(
-                height: 60.0,
-                color: Colors.black12,
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(22.0),
-                    child: Text("View Account Setting"),
-                  ),
+                Divider(
+                  height: 30.0,
+                  color: Colors.blueGrey,
                 ),
-              ),
-            ),
-          ),
-          Divider(
-            height: 30.0,
-            color: Colors.blueGrey,
-          ),
-          SizedBox(
-            child: Container(
-              height: 60,
-              color: Colors.black12,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text("Dark Theme"),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.lightbulb_outline,
+                SizedBox(
+                  child: Container(
+                    height: 60,
+                    color: Colors.black12,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text("Dark Theme"),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        InkWell(
+                          onTap: () {},
+                          child: Icon(
+                            Icons.lightbulb_outline,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            height: 30.0,
-            color: Colors.blueGrey,
-          ),
-          SizedBox(
-            child: Container(
-              height: 60,
-              color: Colors.black12,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text("Notificaion"),
-                  ),
-                  SizedBox(
-                    width: 8,
-                  ),
-                  Switch(value: true, onChanged: null)
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            height: 30.0,
-            color: Colors.blueGrey,
-          ),
-          SizedBox(
-            child: InkWell(
-              onTap: () {
-                FirebaseAuth.instance.signOut();
-                User user = FirebaseAuth.instance.currentUser;
-                user.delete();
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => WelcomeScreen()));
-              },
-              child: Container(
-                height: 60,
-                color: Colors.black12,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Text("Sign out"),
                 ),
-              ),
-            ),
-          ),
-        ],
-      ),*/
+                Divider(
+                  height: 30.0,
+                  color: Colors.blueGrey,
+                ),
+                SizedBox(
+                  child: Container(
+                    height: 60,
+                    color: Colors.black12,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text("Notificaion"),
+                        ),
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Switch(value: true, onChanged: null)
+                      ],
+                    ),
+                  ),
+                ),
+                Divider(
+                  height: 30.0,
+                  color: Colors.blueGrey,
+                ),
+                SizedBox(
+                  child: InkWell(
+                    onTap: () {
+                      FirebaseAuth.instance.signOut();
+                      User user = FirebaseAuth.instance.currentUser;
+                      user.delete();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => WelcomeScreen()));
+                    },
+                    child: Container(
+                      height: 60,
+                      color: Colors.black12,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text("Sign out"),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }
+        },
+      ),
     );
   }
 
