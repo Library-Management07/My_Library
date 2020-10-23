@@ -26,7 +26,7 @@ class _SemState extends State<Sem> {
               centerTitle: true,
               title: Text(widget.tsem),
               background: Image.asset(
-                "assets/Menu_Home.png",
+                "assets/Block.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -71,7 +71,8 @@ class _SemState extends State<Sem> {
                                   child: Text(
                                 snapshot.data.docs[i].get("NAME"),
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'PlayfairDisplay',
+                                  fontWeight: FontWeight.w400,
                                 ),
                               )),
                               padding: EdgeInsets.only(top: 30.0, bottom: 30.0),

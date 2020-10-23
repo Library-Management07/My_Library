@@ -25,7 +25,10 @@ class AdminBody extends StatelessWidget {
           children: <Widget>[
             Text(
               "LOGIN",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontFamily: 'PlayfairDisplay',
+                fontWeight: FontWeight.w400,
+              ),
             ),
             SizedBox(height: size.height * 0.03),
             Image.asset(

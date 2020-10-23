@@ -29,7 +29,8 @@ class _Home_screen2State extends State<Home_screen2> {
                       child: Text(
                         "My library",
                         style: TextStyle(
-                          fontStyle: FontStyle.italic,
+                          fontFamily: 'PlayfairDisplay',
+                          fontWeight: FontWeight.w400,
                           fontSize: 40.0,
                         ),
                       ),
@@ -38,7 +39,7 @@ class _Home_screen2State extends State<Home_screen2> {
                 ),
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/Menu_Home.png"),
+                    image: AssetImage("assets/Block.png"),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(25),
@@ -57,7 +58,8 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "Book Store",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           padding: EdgeInsets.only(top: 70, left: 50),
@@ -65,7 +67,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           //height: 170.0,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("assets/One.png"),
+                              image: AssetImage("assets/Four.png"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.circular(25),
@@ -87,7 +89,8 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "Book Detail",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           padding: EdgeInsets.only(top: 100, left: 55),
@@ -95,7 +98,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           //  height: 230.0,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("assets/One.png"),
+                              image: AssetImage("assets/Four.png"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.circular(25),
@@ -125,7 +128,8 @@ class _Home_screen2State extends State<Home_screen2> {
                             child: Text(
                               "Student Detail",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                fontFamily: 'PlayfairDisplay',
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             padding: EdgeInsets.only(top: 100, left: 45),
@@ -133,7 +137,7 @@ class _Home_screen2State extends State<Home_screen2> {
                             height: 230.0,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage("assets/One.png"),
+                                image: AssetImage("assets/Four.png"),
                                 fit: BoxFit.cover,
                               ),
                               borderRadius: BorderRadius.circular(25),
@@ -156,7 +160,8 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "My account",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           height: 170.0,
@@ -164,7 +169,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           margin: EdgeInsets.all(10.0),
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("assets/One.png"),
+                              image: AssetImage("assets/Four.png"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.circular(25),

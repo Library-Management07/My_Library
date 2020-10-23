@@ -28,7 +28,7 @@ class _SubjectState extends State<Subject> {
               centerTitle: true,
               title: Text(widget.subname),
               background: Image.asset(
-                "assets/Menu_Home.png",
+                "assets/Block.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -62,7 +62,8 @@ class _SubjectState extends State<Subject> {
                         title: Text(
                           snapshot.data.docs[i].get('NAME'),
                           style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                            fontFamily: 'PlayfairDisplay',
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),

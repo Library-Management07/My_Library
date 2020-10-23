@@ -28,7 +28,8 @@ class _Home_screenState extends State<Home_screen> {
                       child: Text(
                         "My library",
                         style: TextStyle(
-                          fontStyle: FontStyle.italic,
+                          fontFamily: 'PlayfairDisplay',
+                          fontWeight: FontWeight.w400,
                           fontSize: 40.0,
                         ),
                       ),
@@ -59,7 +60,8 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "Book Store",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           padding: EdgeInsets.only(top: 70, left: 50),
@@ -86,7 +88,8 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "Mybook",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           padding: EdgeInsets.only(top: 100, left: 70),
@@ -121,7 +124,8 @@ class _Home_screenState extends State<Home_screen> {
                             child: Text(
                               "Search",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                fontFamily: 'PlayfairDisplay',
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                             padding: EdgeInsets.only(top: 100, left: 70),
@@ -149,7 +153,8 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "My account",
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontFamily: 'PlayfairDisplay',
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           height: 170.0,

@@ -39,7 +39,7 @@ class _AccSettingState extends State<AccSetting> {
               centerTitle: true,
               title: Text("My Account"),
               background: Image.asset(
-                "assets/Menu_Home.png",
+                "assets/Block.png",
                 fit: BoxFit.cover,
               ),
             ),

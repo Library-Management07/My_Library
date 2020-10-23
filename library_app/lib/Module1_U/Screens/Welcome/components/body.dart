@@ -20,7 +20,11 @@ class Body extends StatelessWidget {
           children: <Widget>[
             Text(
               "WELCOME TO MY LIBRARY",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: TextStyle(
+                  fontFamily: 'PlayfairDisplay',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 20.0
+              ),
             ),
             SizedBox(height: size.height * 0.05),
             Image.asset(

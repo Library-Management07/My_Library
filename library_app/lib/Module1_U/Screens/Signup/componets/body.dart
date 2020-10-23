@@ -68,7 +68,10 @@ class Body extends StatelessWidget {
             SizedBox(height: size.height * 0.03),
             Text(
               "SIGNUP",
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontFamily: 'PlayfairDisplay',
+                fontWeight: FontWeight.w400,
+              ),
             ),
             SizedBox(height: size.height * 0.03),
             Image.asset(

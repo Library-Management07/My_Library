@@ -29,7 +29,7 @@ class _CEState extends State<CE> {
               centerTitle: true,
               title: Text("CE"),
               background: Image.asset(
-                "assets/Menu_Home.png",
+                "assets/Block.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -68,7 +68,8 @@ class _CEState extends State<CE> {
                                   child: Text(
                                 snapshot.data.docs[i].get("NAME"),
                                 style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'PlayfairDisplay',
+                                  fontWeight: FontWeight.w400,
                                 ),
                               )),
                               padding: EdgeInsets.only(top: 30.0, bottom: 30.0),
