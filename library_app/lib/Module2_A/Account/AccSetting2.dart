@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:library_app/Module2_A/Account/MyAcc2.dart';
 
 class AccountSetting extends StatelessWidget {
   @override
@@ -27,7 +28,8 @@ class _AccSettingState extends State<AccSetting> {
             leading: IconButton(
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyAccount()));
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -55,18 +57,34 @@ class _AccSettingState extends State<AccSetting> {
                 child: ClipOval(
                   child: SizedBox(
                     width: 100,
-                    height: 100,
+                    height: 80,
                   ),
                 ),
               ),
               title: Text("Patel Jay"),
-              subtitle: Text("19ce100@charusat.edu.in"),
+              subtitle: Text("pateljay24oct@gmail.com"),
             ),
           ),
           Divider(
             height: 10.0,
             color: Colors.blueGrey,
           ),
+          // SizedBox(
+          //   child: Container(
+          //     height: 60.0,
+          //     color: Colors.black12,
+          //     child: Container(
+          //       child: Padding(
+          //         padding: const EdgeInsets.all(22.0),
+          //         child: Text("Id: 19ce100"),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          // Divider(
+          //   height: 30.0,
+          //   color: Colors.blueGrey,
+          // ),
           SizedBox(
             child: Container(
               height: 60.0,
@@ -74,23 +92,7 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("Id: 19ce100"),
-                ),
-              ),
-            ),
-          ),
-          Divider(
-            height: 30.0,
-            color: Colors.blueGrey,
-          ),
-          SizedBox(
-            child: Container(
-              height: 60.0,
-              color: Colors.black12,
-              child: Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(22.0),
-                  child: Text("Email Id: 19ce100@charusat.edu.in"),
+                  child: Text("Email Id: pateljay24oct@gmail.com"),
                 ),
               ),
             ),

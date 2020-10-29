@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:library_app/Module2_A/HomeScreen2.dart';
 
 class StudentDetail extends StatelessWidget {
   @override
@@ -21,9 +22,14 @@ class _StudentdetailState extends State<Studentdetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios_outlined),
         title: Text("Login Student details"),
         backgroundColor: Colors.purple,
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Home_screen2()));
+            }),
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance

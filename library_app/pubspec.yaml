@@ -29,6 +29,7 @@ dependencies:
   firebase_database:
   random_color:
   flutter_svg:
+  fluttertoast:
   
 
   # The following adds the Cupertino Icons font to your application.

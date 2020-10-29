@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:library_app/Module1_U/Account/MyAcc.dart';
+import 'package:library_app/Module2_A/Account/MyAcc2.dart';
 import 'package:library_app/Module2_A/BookDetail/Multi_form.dart';
 import 'package:library_app/Module2_A/StudentDetail/StudentDetail.dart';
 
@@ -150,7 +150,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => MyAccount()));
+                                  builder: (context) => Account1()));
                         },
                         child: Container(
                           child: Text(

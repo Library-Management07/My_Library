@@ -1,26 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:library_app/Module1_U/Account/AccSetting.dart';
-import 'package:library_app/Module1_U/HomeScreen.dart';
 import 'package:library_app/Module1_U/Screens/Welcome/welcome_screen.dart';
+import 'package:library_app/Module2_A/Account/AccSetting2.dart';
+import 'package:library_app/Module2_A/HomeScreen2.dart';
 
 class MyAccount extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Account(),
+      home: Account1(),
     );
   }
 }
 
-class Account extends StatefulWidget {
+class Account1 extends StatefulWidget {
   @override
-  _AccountState createState() => _AccountState();
+  _Account1State createState() => _Account1State();
 }
 
-class _AccountState extends State<Account> {
+class _Account1State extends State<Account1> {
   final userid = FirebaseAuth.instance.currentUser.uid;
   nested() {
     return NestedScrollView(
@@ -31,7 +31,7 @@ class _AccountState extends State<Account> {
                 icon: Icon(Icons.arrow_back_ios),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Home_screen()));
+                      MaterialPageRoute(builder: (context) => Home_screen2()));
                 }),
             expandedHeight: 200.0,
             floating: false,
@@ -78,7 +78,7 @@ class _AccountState extends State<Account> {
                     //snapshot.data.docs.get('name')
                     title: Text('Patel Jay'),
                     //snapshot.data.docs.get('email')
-                    subtitle: Text('19ce100@charusat.edu.in'),
+                    subtitle: Text('pateljay24oct@gmail.com'),
                   ),
                 ),
                 Divider(
