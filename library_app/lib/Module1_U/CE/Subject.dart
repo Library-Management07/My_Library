@@ -62,7 +62,7 @@ class _SubjectState extends State<Subject> {
                         title: Text(
                           snapshot.data.docs[i].get('NAME'),
                           style: TextStyle(
-                            fontFamily: 'PlayfairDisplay',
+                            fontFamily: 'SansitaSwashed',
                             fontWeight: FontWeight.w400,
                           ),
                         ),

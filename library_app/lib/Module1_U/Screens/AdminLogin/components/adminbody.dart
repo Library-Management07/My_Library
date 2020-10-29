@@ -26,7 +26,7 @@ class AdminBody extends StatelessWidget {
             Text(
               "LOGIN",
               style: TextStyle(
-                fontFamily: 'PlayfairDisplay',
+                fontFamily: 'SansitaSwashed',
                 fontWeight: FontWeight.w400,
               ),
             ),

@@ -97,7 +97,12 @@ class _AccountState extends State<Account> {
                         child: Container(
                           child: Padding(
                             padding: const EdgeInsets.all(22.0),
-                            child: Text("View Account Setting"),
+                            child: Text("View Account Setting",
+                              style: TextStyle(
+                                fontFamily: 'SansitaSwashed',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -116,7 +121,12 @@ class _AccountState extends State<Account> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Text("Dark Theme"),
+                            child: Text("Dark Theme",
+                              style: TextStyle(
+                                fontFamily: 'SansitaSwashed',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: 8,
@@ -144,7 +154,12 @@ class _AccountState extends State<Account> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Text("Notificaion"),
+                            child: Text("Notification",
+                              style: TextStyle(
+                                fontFamily: 'SansitaSwashed',
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
                           ),
                           SizedBox(
                             width: 8,
@@ -174,7 +189,12 @@ class _AccountState extends State<Account> {
                         color: Colors.black12,
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
-                          child: Text("Sign out"),
+                          child: Text("Sign out",
+                            style: TextStyle(
+                              fontFamily: 'SansitaSwashed',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
                         ),
                       ),
                     ),

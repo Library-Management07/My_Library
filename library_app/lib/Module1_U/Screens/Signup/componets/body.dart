@@ -69,7 +69,7 @@ class Body extends StatelessWidget {
             Text(
               "SIGNUP",
               style: TextStyle(
-                fontFamily: 'PlayfairDisplay',
+                fontFamily: 'SansitaSwashed',
                 fontWeight: FontWeight.w400,
               ),
             ),

@@ -68,7 +68,7 @@ class _CEState extends State<CE> {
                                   child: Text(
                                 snapshot.data.docs[i].get("NAME"),
                                 style: TextStyle(
-                                  fontFamily: 'PlayfairDisplay',
+                                  fontFamily: 'SansitaSwashed',
                                   fontWeight: FontWeight.w400,
                                 ),
                               )),

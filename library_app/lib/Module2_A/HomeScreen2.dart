@@ -29,7 +29,7 @@ class _Home_screen2State extends State<Home_screen2> {
                       child: Text(
                         "My library",
                         style: TextStyle(
-                          fontFamily: 'PlayfairDisplay',
+                          fontFamily: 'Oswald',
                           fontWeight: FontWeight.w400,
                           fontSize: 40.0,
                         ),
@@ -58,7 +58,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "Book Store",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -89,7 +89,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "Book Detail",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -128,7 +128,7 @@ class _Home_screen2State extends State<Home_screen2> {
                             child: Text(
                               "Student Detail",
                               style: TextStyle(
-                                fontFamily: 'PlayfairDisplay',
+                                fontFamily: 'SansitaSwashed',
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -160,7 +160,7 @@ class _Home_screen2State extends State<Home_screen2> {
                           child: Text(
                             "My account",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),

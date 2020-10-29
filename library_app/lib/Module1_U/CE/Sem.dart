@@ -71,7 +71,7 @@ class _SemState extends State<Sem> {
                                   child: Text(
                                 snapshot.data.docs[i].get("NAME"),
                                 style: TextStyle(
-                                  fontFamily: 'PlayfairDisplay',
+                                  fontFamily: 'SansitaSwashed',
                                   fontWeight: FontWeight.w400,
                                 ),
                               )),

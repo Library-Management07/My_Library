@@ -18,7 +18,7 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
         Text(
           login ? "Don’t have an Account ? " : "Already have an Account ? ",
           style: TextStyle(
-              fontFamily: 'PlayfairDisplay',
+              fontFamily: 'SansitaSwashed',
               fontWeight: FontWeight.w400,
               color: kPrimaryColor),
         ),
@@ -28,7 +28,8 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
             login ? "Sign Up" : "Sign In",
             style: TextStyle(
               color: kPrimaryColor,
-              fontWeight: FontWeight.bold,
+              fontFamily: 'SansitaSwashed',
+              fontWeight: FontWeight.w400,
             ),
           ),
         )

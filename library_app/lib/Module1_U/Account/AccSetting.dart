@@ -76,7 +76,12 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("UserName:"),
+                  child: Text("UserName:",
+                    style: TextStyle(
+                      fontFamily: 'SansitaSwashed',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -92,7 +97,12 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("Email Id:"),
+                  child: Text("Email Id:",
+                    style: TextStyle(
+                      fontFamily: 'SansitaSwashed',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -108,7 +118,12 @@ class _AccSettingState extends State<AccSetting> {
               child: Container(
                 child: Padding(
                   padding: const EdgeInsets.all(22.0),
-                  child: Text("Contact Number: "),
+                  child: Text("Contact Number: ",
+                    style: TextStyle(
+                      fontFamily: 'SansitaSwashed',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ),
               ),
             ),

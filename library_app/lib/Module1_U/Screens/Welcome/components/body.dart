@@ -21,7 +21,7 @@ class Body extends StatelessWidget {
             Text(
               "WELCOME TO MY LIBRARY",
               style: TextStyle(
-                  fontFamily: 'PlayfairDisplay',
+                  fontFamily: 'SansitaSwashed',
                   fontWeight: FontWeight.w400,
                   fontSize: 20.0
               ),

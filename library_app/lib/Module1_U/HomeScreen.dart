@@ -30,7 +30,7 @@ class _Home_screenState extends State<Home_screen> {
                       child: Text(
                         "My library",
                         style: TextStyle(
-                          fontFamily: 'PlayfairDisplay',
+                          fontFamily: 'Oswald',
                           fontWeight: FontWeight.w400,
                           fontSize: 40.0,
                         ),
@@ -62,7 +62,7 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "Book Store",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -90,7 +90,7 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "Mybook",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
@@ -129,7 +129,7 @@ class _Home_screenState extends State<Home_screen> {
                             child: Text(
                               "Search",
                               style: TextStyle(
-                                fontFamily: 'PlayfairDisplay',
+                                fontFamily: 'SansitaSwashed',
                                 fontWeight: FontWeight.w400,
                               ),
                             ),
@@ -161,7 +161,7 @@ class _Home_screenState extends State<Home_screen> {
                           child: Text(
                             "My account",
                             style: TextStyle(
-                              fontFamily: 'PlayfairDisplay',
+                              fontFamily: 'SansitaSwashed',
                               fontWeight: FontWeight.w400,
                             ),
                           ),
