@@ -21,7 +21,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
-  final userid = FirebaseAuth.instance.currentUser.uid;
+  String userid = FirebaseAuth.instance.currentUser.uid;
   nested() {
     return NestedScrollView(
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -51,9 +51,9 @@ class _AccountState extends State<Account> {
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('users')
-            .where('uid', isEqualTo: userid)
+            .doc(userid)
             .snapshots(),
-        builder: (context, snapshot) {
+        builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: CircularProgressIndicator(),
@@ -75,10 +75,8 @@ class _AccountState extends State<Account> {
                         ),
                       ),
                     ),
-                    //snapshot.data.docs.get('name')
-                    title: Text('Patel Jay'),
-                    //snapshot.data.docs.get('email')
-                    subtitle: Text('19ce100@charusat.edu.in'),
+                    title: Text(snapshot.data.get('name').toString()),
+                    subtitle: Text(snapshot.data.get('email').toString()),
                   ),
                 ),
                 Divider(

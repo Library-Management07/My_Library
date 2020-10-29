@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:library_app/Module2_A/Account/MyAcc2.dart';
 import 'package:library_app/Module2_A/BookDetail/Multi_form.dart';
 import 'package:library_app/Module2_A/StudentDetail/StudentDetail.dart';
+import 'package:library_app/Module2_A/bookstore_A/bookinfo.dart';
 
 // ignore: camel_case_types
 class Home_screen2 extends StatefulWidget {
@@ -52,7 +53,10 @@ class _Home_screen2State extends State<Home_screen2> {
                       height: 180.0,
                       width: 180.0,
                       child: InkWell(
-                        //       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CE()));},
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => bi()));
+                        },
                         child: Container(
                           child: Text(
                             "Book Store",

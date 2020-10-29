@@ -12,9 +12,8 @@ class Save extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-// ignore: must_be_immutable
 class save extends StatefulWidget {
-  String detail;
+  final String detail;
   save({this.detail});
   @override
   _saveState createState() => _saveState();
