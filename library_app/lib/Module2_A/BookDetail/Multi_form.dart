@@ -25,8 +25,17 @@ class _Multi_formState extends State<Multi_form> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Book issued Details"),
+        title: Text('Book issued details'),
         backgroundColor: Colors.purple,
+        /*actions: [
+          IconButton(
+            icon: Icon(Icons.book),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => BookClick()));
+            },
+          )
+        ],*/
       ),
       body: users.length <= 0
           ? Save()

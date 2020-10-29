@@ -116,11 +116,6 @@ class _UserFormState extends State<UserForm> {
                     onChanged: (value) {
                       email = value;
                     },
-                    //initialValue: widget.user.email,
-                    //onSaved: (val) => widget.user.email = val,
-                    // validator: (val) => val.contains('@')
-                    //     ? 'Email is valid'
-                    //     : 'Email is invalid',
                     decoration: InputDecoration(
                       labelText: 'Email :',
                       hintText: 'Enter Email',
@@ -133,10 +128,6 @@ class _UserFormState extends State<UserForm> {
                     onChanged: (value) {
                       id = value;
                     },
-                    // initialValue: widget.user.id,
-                    // onSaved: (val) => widget.user.id = val,
-                    // validator: (val) =>
-                    //     val.contains('ce') ? 'Id is valid' : 'Id is invalid',
                     decoration: InputDecoration(
                       labelText: 'Id: ',
                       hintText: 'Enter Id',
@@ -149,11 +140,6 @@ class _UserFormState extends State<UserForm> {
                     onChanged: (value) {
                       bname = value;
                     },
-                    // initialValue: widget.user.bname,
-                    // onSaved: (val) => widget.user.bname = val,
-                    // validator: (val) => val.length > 3
-                    //     ? 'Bookname is valid'
-                    //     : 'Book Name is invalid',
                     decoration: InputDecoration(
                       labelText: 'Book Name: ',
                       hintText: 'Enter BookName',
