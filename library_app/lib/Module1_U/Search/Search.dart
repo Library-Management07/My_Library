@@ -52,7 +52,7 @@ class _SearchState extends State<Search> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.purple[700],
+        backgroundColor: Colors.purple[300],
         title: Text("Search"),
       ),
       body: ListView(

@@ -33,7 +33,7 @@ class _AccSettingState extends State<AccSetting> {
                 }),
             expandedHeight: 200.0,
             floating: false,
-            backgroundColor: Colors.purple[700],
+            backgroundColor: Colors.purple[300],
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -53,7 +53,7 @@ class _AccSettingState extends State<AccSetting> {
             child: ListTile(
               leading: CircleAvatar(
                 radius: 30,
-                backgroundColor: Colors.purple[700],
+                backgroundColor: Colors.purple[300],
                 child: ClipOval(
                   child: SizedBox(
                     width: 100,
@@ -69,22 +69,6 @@ class _AccSettingState extends State<AccSetting> {
             height: 10.0,
             color: Colors.blueGrey,
           ),
-          // SizedBox(
-          //   child: Container(
-          //     height: 60.0,
-          //     color: Colors.black12,
-          //     child: Container(
-          //       child: Padding(
-          //         padding: const EdgeInsets.all(22.0),
-          //         child: Text("Id: 19ce100"),
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          // Divider(
-          //   height: 30.0,
-          //   color: Colors.blueGrey,
-          // ),
           SizedBox(
             child: Container(
               height: 60.0,

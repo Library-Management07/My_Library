@@ -23,7 +23,7 @@ class _StudentdetailState extends State<Studentdetail> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Login Student details"),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple[300],
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () {

@@ -35,7 +35,7 @@ class _Account1State extends State<Account1> {
                 }),
             expandedHeight: 200.0,
             floating: false,
-            backgroundColor: Colors.purple[700],
+            backgroundColor: Colors.purple[300],
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -67,7 +67,7 @@ class _Account1State extends State<Account1> {
                   child: ListTile(
                     leading: CircleAvatar(
                       radius: 30,
-                      backgroundColor: Colors.purple[700],
+                      backgroundColor: Colors.purple[300],
                       child: ClipOval(
                         child: SizedBox(
                           width: 100,

@@ -29,7 +29,7 @@ class _MybookState extends State<Mybook> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => Home_screen()));
             }),
-        backgroundColor: Colors.purple[700],
+        backgroundColor: Colors.purple[300],
         title: Text("                 My book"),
       ),
       body: StreamBuilder(

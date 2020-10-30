@@ -26,7 +26,7 @@ class _Multi_formState extends State<Multi_form> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Book issued details'),
-        backgroundColor: Colors.purple,
+        backgroundColor: Colors.purple[300],
         /*actions: [
           IconButton(
             icon: Icon(Icons.book),

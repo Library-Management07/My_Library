@@ -25,7 +25,7 @@ class _SubjectAState extends State<SubjectA> {
                 }),
             expandedHeight: 200.0,
             floating: false,
-            backgroundColor: Colors.purple[700],
+            backgroundColor: Colors.purple[300],
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,

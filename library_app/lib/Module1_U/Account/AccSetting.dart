@@ -39,7 +39,7 @@ class _AccSettingState extends State<AccSetting> {
                 }),
             expandedHeight: 200.0,
             floating: false,
-            backgroundColor: Colors.purple[700],
+            backgroundColor: Colors.purple[300],
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
@@ -72,7 +72,7 @@ class _AccSettingState extends State<AccSetting> {
                     child: ListTile(
                       leading: CircleAvatar(
                         radius: 30,
-                        backgroundColor: Colors.purple[700],
+                        backgroundColor: Colors.purple[300],
                         child: ClipOval(
                           child: SizedBox(
                             width: 100,
